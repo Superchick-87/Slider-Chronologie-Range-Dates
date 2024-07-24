@@ -1,0 +1,168 @@
+ body {
+     font-family: Arial, sans-serif;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     margin: 0;
+     padding: 0 10px;
+     box-sizing: border-box;
+     align-items: center;
+ }
+
+ h2 {
+     font-size: 1.4em;
+     font-weight: 700;
+     /* margin-top: 40px; */
+     margin-bottom: 20px;
+ }
+
+ #imageContainer {
+     position: relative;
+     width: 100%;
+     max-width: 600px;
+     height: 300px;
+     /* Hauteur fixe */
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+     touch-action: pan-y;
+     /* Permet le défilement vertical tout en permettant les gestes de glissement horizontal */
+ }
+
+ #imageContainer img {
+     position: absolute;
+     top: 0;
+     left: 100%;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transition: left 0.5s ease-in-out;
+     /* Transition fluide pour le changement d'image */
+ }
+
+ #imageContainer img.active {
+     left: 0;
+ }
+
+ #imageContainer img.prev {
+     left: -100%;
+ }
+
+ .arrow {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     background-color: rgba(255, 0, 0, 0.61);
+     border: none;
+     cursor: pointer;
+     padding: 10px;
+     z-index: 1;
+     border-radius: 50%;
+     line-height: 10px;
+     width: 40px;
+     height: 40px;
+     color: white;
+     font-size: 18px;
+     /* Augmente la taille des flèches */
+ }
+
+ .arrow.left {
+     left: 10px;
+ }
+
+ .arrow.right {
+     right: 10px;
+ }
+
+ .rangeBarre {
+     width: 100%;
+     /* Assurez-vous que la barre de plage a la même largeur que le conteneur d'image */
+     max-width: 600px;
+     /* Limitez la largeur maximale */
+     margin-top: 10px;
+     /* Un peu d'espace au-dessus */
+ }
+
+ #rangeSlider {
+     -webkit-appearance: none;
+     /* Retire le style par défaut pour WebKit browsers */
+     width: 100%;
+     height: 10px;
+     /* Hauteur de la barre de plage */
+     background: #ddd;
+     /* Couleur de la barre de plage */
+     border-radius: 5px;
+     /* Coins arrondis */
+     outline: none;
+     opacity: 0.7;
+     /* Opacité */
+     transition: opacity .15s ease-in-out;
+ }
+
+ #rangeSlider::-webkit-slider-thumb {
+     -webkit-appearance: none;
+     appearance: none;
+     width: 25px;
+     /* Largeur du curseur */
+     height: 25px;
+     /* Hauteur du curseur */
+     background: #ff0000;
+     /* Couleur du curseur */
+     border-radius: 50%;
+     /* Curseur rond */
+     cursor: pointer;
+ }
+
+ #rangeSlider::-moz-range-thumb {
+     width: 25px;
+     height: 25px;
+     background: #ff0000;
+     border-radius: 50%;
+     cursor: pointer;
+ }
+
+ #dates {
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+     margin: 6px 0px;
+     padding: 0;
+     width: 100%;
+     max-width: 600px;
+ }
+
+ #dates span {
+     font-size: 14px;
+     cursor: pointer;
+     margin: 2px;
+     background-color: #d2d2d2;
+     color: black;
+     padding: 4px;
+ }
+
+ span:hover {
+     color: rgb(255, 255, 255);
+     background-color: rgba(255, 0, 0, 0.565);
+ }
+
+ #dates span.active {
+     font-weight: bold;
+     /* color: red; */
+     color: rgb(255, 255, 255);
+     background-color: red;
+ }
+
+ #textContainer {
+     width: 100%;
+     max-width: 600px;
+     margin-top: 10px;
+ }
+
+ #textContainer p {
+     display: none;
+     margin: 0;
+ }
+
+ #textContainer p.active {
+     display: block;
+ }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range Slider avec Images et Dates</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <h1>L'histoire de Sud Ouest</h1>
+
+    <div id="imageContainer">
+        <button class="arrow left" id="prev"><b>&#9664;</b></button>
+        <img src="images/1944.jpg" id="image1" class="active" alt="1944">
+        <img src="images/1984.jpg" id="image2" alt="1984">
+        <img src="images/2024.jpg" id="image3" alt="2024">
+        <button class="arrow right" id="next"><b>&#9654;</b></button>
+    </div>
+
+    <div class="rangeBarre">
+        <input type="range" id="rangeSlider" min="1" max="3" value="1">
+    </div>
+
+    <div id="dates">
+        <span id="date1" data-index="1">1944</span>
+        <span id="date2" data-index="2">1984</span>
+        <span id="date3" data-index="3">2024</span>
+    </div>
+
+    <div id="textContainer">
+        <p id="text1" class="active"><b>Texte de 200 signes pour l'année 1944.</b></br>Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Proin convallis feugiat ligula, nec interdum erat efficitur non. Curabitur ut
+            turpis at metus fermentum.</p>
+        <p id="text2"><b>Texte de 200 signes pour l'année 1984.</b></br>Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Proin convallis feugiat ligula, nec interdum erat efficitur non. Curabitur ut turpis at
+            metus fermentum.</p>
+        <p id="text3"><b>Texte de 200 signes pour l'année 2024.</b></br>Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Proin convallis feugiat ligula, nec interdum erat efficitur non. Curabitur ut turpis at
+            metus fermentum.</p>
+    </div>
+    <script src="js/slider.js"></script>
+</body>
+
+</html>
